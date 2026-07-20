@@ -1,0 +1,32 @@
+generated: '2026-07-18'
+method: searched
+source: https://www.blume.com/.well-known/openid-configuration
+notes: >-
+  Authentication for the blume.com storefront is provided by the Shopify Customer
+  Account API (OAuth2 authorization_code with PKCE + OpenID Connect). Discovered
+  live from the store's OIDC discovery document. This is the buyer/customer auth
+  surface; agent commerce over the UCP MCP endpoint additionally requires a UCP
+  agent profile handshake.
+summary:
+  types: [oauth2, openIdConnect]
+  oauth2_flows: [authorizationCode]
+  pkce: S256
+  token_endpoint_auth: client_secret_basic
+schemes:
+  - name: ShopifyCustomerAccountOIDC
+    type: openIdConnect
+    issuer: https://shopify.com/authentication/345800755
+    openIdConnectUrl: https://www.blume.com/.well-known/openid-configuration
+    authorization_endpoint: https://shopify.com/authentication/345800755/oauth/authorize
+    token_endpoint: https://shopify.com/authentication/345800755/oauth/token
+    end_session_endpoint: https://shopify.com/authentication/345800755/logout
+    jwks_uri: https://shopify.com/authentication/345800755/.well-known/jwks.json
+    id_token_signing_alg: [RS256]
+    grant_types: [authorization_code, refresh_token, 'urn:ietf:params:oauth:grant-type:jwt-bearer']
+    code_challenge_methods: [S256]
+    scopes:
+      - openid
+      - email
+      - customer-account-api:full
+      - customer-account-mcp-api:full
+    sources: [well-known/blume-openid-configuration.json]
