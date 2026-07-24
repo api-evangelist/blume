@@ -1,0 +1,13 @@
+generated: '2026-07-18'
+method: searched
+source: https://www.blume.com/agents.md
+skills:
+  - file: blume-agents.md
+    name: Blume agent instructions (agents.md)
+    description: >-
+      Provider-published canonical agent-facing description of the Blume store:
+      how AI agents transact via the Universal Commerce Protocol (UCP) MCP endpoint,
+      the buyer-approval invariant on checkout, the Shop skill, and store data endpoints.
+    published: true
+    api: mcp/blume-mcp.yml
+    operations: [search_catalog, create_cart, create_checkout, update_checkout, complete_checkout]

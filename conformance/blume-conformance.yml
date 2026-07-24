@@ -1,0 +1,28 @@
+generated: '2026-07-18'
+method: searched
+source: https://www.blume.com/.well-known/ucp
+notes: >-
+  Cross-cutting standards the blume.com storefront conforms to, verified from live
+  discovery documents (/.well-known/ucp, /.well-known/openid-configuration) and the
+  published /agents.md. All are platform-provided by Shopify but served on Blume's
+  own domain.
+standards:
+  - id: ucp-universal-commerce-protocol
+    conforms: true
+    version: '2026-04-08'
+    evidence: /.well-known/ucp advertises UCP merchant profile with shopping service over MCP transport
+  - id: mcp-model-context-protocol
+    conforms: true
+    evidence: live MCP endpoint at /api/ucp/mcp (JSON-RPC 2.0), advertised in UCP profile and agents.md
+  - id: agents-md
+    conforms: true
+    evidence: canonical /agents.md published and linked from sitemap_agentic_discovery.xml
+  - id: oidc-openid-connect
+    conforms: true
+    evidence: /.well-known/openid-configuration (Shopify Customer Account API), RS256 id_token, S256 PKCE
+  - id: oauth2
+    conforms: true
+    evidence: authorization_code grant with client_secret_basic, refresh_token, jwt-bearer grants
+  - id: rfc8414-oauth-authorization-server-metadata
+    conforms: true
+    evidence: /.well-known/oauth-authorization-server returns RFC 8414 metadata

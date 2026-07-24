@@ -1,7 +1,16 @@
 aid: blume
 name: Blume
-description: Blume is a company surfaced as a portfolio company of 500-global, felicis and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Blume is a women-owned self-care and skincare brand (blume.com) selling
+  cleansers, serums, oils, gel creams, and sunscreen for acne, dark spots, and
+  sensitive skin, marketed as vegan, certified clean, climate neutral, and
+  plastic neutral. Its direct-to-consumer storefront runs on Shopify and exposes
+  a genuine agent-native commerce surface: a canonical /agents.md, a Universal
+  Commerce Protocol (UCP 2026-04-08) merchant profile at /.well-known/ucp, a live
+  Model Context Protocol endpoint for agent-driven shopping (search, cart,
+  checkout, fulfillment), and Shopify Customer Account OAuth2/OpenID Connect
+  authentication. Surfaced from the 500 Global and Felicis portfolios and enriched
+  by the API Evangelist pipeline from live discovery documents.
 url: https://raw.githubusercontent.com/api-evangelist/blume/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,11 +19,33 @@ x-backed-by:
 - felicis
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
+image: https://www.blume.com/cdn/shop/files/Screenshot_2026-06-01_at_11.33.49_AM_1.png?v=1782260453
 tags:
 - Company
+- Skincare
+- Beauty
+- Self-Care
+- E-commerce
+- Consumer
+- Shopify
+- Agent Commerce
+- Universal Commerce Protocol
+- MCP
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -24,3 +55,34 @@ maintainers:
 common:
 - type: Website
   url: https://blume.com
+- type: Documentation
+  url: https://www.blume.com/agents.md
+- type: Blog
+  url: https://www.blume.com/blogs/blume-university
+- type: Support
+  url: https://www.blume.com/pages/faq
+- type: SignUp
+  url: https://www.blume.com/account/register
+- type: Login
+  url: https://www.blume.com/account/login
+- type: PrivacyPolicy
+  url: https://www.blume.com/policies/privacy-policy
+- type: TermsOfService
+  url: https://www.blume.com/policies/terms-of-service
+- type: MCPServer
+  url: mcp/blume-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: WellKnown
+  url: well-known/blume-well-known.yml
+- type: Authentication
+  url: authentication/blume-authentication.yml
+- type: Conformance
+  url: conformance/blume-conformance.yml
+- type: DomainSecurity
+  url: security/blume-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

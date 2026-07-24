@@ -1,0 +1,23 @@
+generated: '2026-07-18'
+method: searched
+host: https://www.blume.com
+platform: Shopify (store id 345800755, blume-box.myshopify.com)
+documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: blume-openid-configuration.json
+    note: Shopify Customer Account API OIDC discovery (OAuth2 authorization_code + PKCE)
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: blume-oauth-authorization-server.json
+    note: RFC 8414 authorization server metadata (identical issuer to OIDC config)
+  - path: /.well-known/ucp
+    status: 200
+    file: blume-ucp.json
+    note: Universal Commerce Protocol merchant profile (agent-driven commerce, MCP + embedded transports)
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
