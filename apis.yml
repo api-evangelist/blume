@@ -31,7 +31,7 @@ accessModel:
   - authentication
   generated: '2026-07-22'
   method: derived
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-07-17'
 modified: '2026-07-18'
 image: https://www.blume.com/cdn/shop/files/Screenshot_2026-06-01_at_11.33.49_AM_1.png?v=1782260453
