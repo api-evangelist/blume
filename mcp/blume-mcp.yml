@@ -2,20 +2,19 @@ generated: '2026-07-18'
 method: searched
 status: published
 source: https://www.blume.com/agents.md
-notes: >-
-  Blume's storefront (blume.com, Shopify store blume-box.myshopify.com) publishes
-  a live Model Context Protocol server implementing the Universal Commerce Protocol
-  (UCP) shopping service. The endpoint is advertised in /.well-known/ucp and in
-  /agents.md. Enumerating tools via MCP tools/list requires a UCP agent profile
-  handshake (the endpoint returned invalid_profile_url without one); the tools
-  below are the buyer flow documented verbatim in agents.md plus the UCP shopping
-  capabilities advertised in the store's UCP merchant profile. Platform-provided
-  by Shopify, served on Blume's own domain and store id.
+notes: Blume's storefront (blume.com, Shopify store blume-box.myshopify.com) publishes a live Model Context
+  Protocol server implementing the Universal Commerce Protocol (UCP) shopping service. The endpoint is
+  advertised in /.well-known/ucp and in /agents.md. Enumerating tools via MCP tools/list requires a UCP
+  agent profile handshake (the endpoint returned invalid_profile_url without one); the tools below are
+  the buyer flow documented verbatim in agents.md plus the UCP shopping capabilities advertised in the
+  store's UCP merchant profile. Platform-provided by Shopify, served on Blume's own domain and store id.
 server:
   name: blume-ucp-shopping
   protocol: Universal Commerce Protocol (UCP)
   ucp_version: '2026-04-08'
-  ucp_supported_versions: ['2026-04-08', '2026-01-23']
+  ucp_supported_versions:
+  - '2026-04-08'
+  - '2026-01-23'
   transport: http
   url: https://www.blume.com/api/ucp/mcp
   canonical_url: https://blume-box.myshopify.com/api/ucp/mcp
@@ -23,31 +22,39 @@ server:
   openrpc_schema: https://ucp.dev/2026-04-08/services/shopping/mcp.openrpc.json
   auth: UCP agent profile handshake required (buyer-approval invariant on checkout)
 tools:
-  - name: search_catalog
-    description: Search the store catalog for products matching the buyer's intent.
-    capability: dev.ucp.shopping.catalog.search
-    source: agents.md
-  - name: create_cart
-    description: Create a cart and add desired items.
-    capability: dev.ucp.shopping.cart
-    source: agents.md
-  - name: create_checkout
-    description: Start the purchase flow for a cart.
-    capability: dev.ucp.shopping.checkout
-    source: agents.md
-  - name: update_checkout
-    description: Set shipping address and method on an in-progress checkout.
-    capability: dev.ucp.shopping.fulfillment
-    source: agents.md
-  - name: complete_checkout
-    description: Finalize the purchase; buyer must approve payment (human-in-the-loop required).
-    capability: dev.ucp.shopping.checkout
-    source: agents.md
+- name: search_catalog
+  description: Search the store catalog for products matching the buyer's intent.
+  capability: dev.ucp.shopping.catalog.search
+  source: agents.md
+- name: create_cart
+  description: Create a cart and add desired items.
+  capability: dev.ucp.shopping.cart
+  source: agents.md
+- name: create_checkout
+  description: Start the purchase flow for a cart.
+  capability: dev.ucp.shopping.checkout
+  source: agents.md
+- name: update_checkout
+  description: Set shipping address and method on an in-progress checkout.
+  capability: dev.ucp.shopping.fulfillment
+  source: agents.md
+- name: complete_checkout
+  description: Finalize the purchase; buyer must approve payment (human-in-the-loop required).
+  capability: dev.ucp.shopping.checkout
+  source: agents.md
 capabilities:
-  - dev.ucp.shopping.cart
-  - dev.ucp.shopping.checkout
-  - dev.ucp.shopping.fulfillment
-  - dev.ucp.shopping.discount
-  - dev.ucp.shopping.order
-  - dev.ucp.shopping.catalog.search
-  - dev.ucp.shopping.catalog.lookup
+- dev.ucp.shopping.cart
+- dev.ucp.shopping.checkout
+- dev.ucp.shopping.fulfillment
+- dev.ucp.shopping.discount
+- dev.ucp.shopping.order
+- dev.ucp.shopping.catalog.search
+- dev.ucp.shopping.catalog.lookup
+deployment:
+  mode: remote
+  endpoint: https://www.blume.com/api/ucp/mcp
+  verified: probed
+  probe: live
+  tools: 13
+  checked: '2026-08-12'
+  source: catalog MCP census
