@@ -44,7 +44,7 @@ accessModel:
   method: derived
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-07-18'
+modified: '2026-10-06'
 image: https://www.blume.com/cdn/shop/files/Screenshot_2026-06-01_at_11.33.49_AM_1.png?v=1782260453
 tags:
 - Company
@@ -75,6 +75,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- url: https://www.blume.com/blogs/blume-university.atom
+  type: BlogRSS
 - type: Website
   url: https://blume.com
 - type: Documentation
